@@ -1,336 +1,193 @@
-*{
-  box-sizing: border-box;
+* {
+	box-sizig: border-box;
 }
 
-.under{
-  margin: 200px 0 0 200px;
-  font-size: 50px;
+body {
+	padding-top: 50px; 
+	font-family: 'Ubuntu', sans-serif;
 }
 
-/* menu glowne */
-
-nav{
-  width: 100%;
-  margin: 0 0 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background-color: #fff;
-  border:1px solid #CCC;
-  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+.row-custom {
+	padding: 50px 0;
 }
 
-nav ul{
-  list-style-type:none;
-  margin: 10px auto 0;
-  padding:0;
-  width: 80%;
+.navbar-nav li a::after {
+	content: "";
+	height: 20px;
+	width: 0px;
+	background-color: transparent;
+	margin: 0 0 0 10px;
+	/*border: 1px solid #304ecf;*/
+	border: 1px solid #f3f3f3;
+	transform: rotate(20deg);
+	position: absolute;
 }
 
-nav ul li{
-  border:2px solid transparent;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+.navbar-custom {
+	background-color: #1a8cff;
+	border-color: #b3d9ff;
 }
 
-nav ul li:hover{
-  border-bottom:2px solid #86BED1;
+.navbar-default .navbar-nav > li > a, .navbar-default .nav-tabs > li > a{
+	color: #f3f3f3; 
 }
 
-nav ul li a{
-  display: inline-block;
-  text-decoration:none;
-  color: #000;  
-  margin: 0;
-  padding: 10px;
+.navbar-default .navbar-nav > li > a:hover {
+	color: #e1e1e1;
+	transition: 200ms;
 }
 
-nav ul li .fa{
-  display: none;
+.navbar-default .nav-tabs > li > a:hover{
+	color: #262626;
+	transition: 200ms;
 }
 
-nav ul li .fa-home{
-  display: inline-block;
+.navbar-default .navbar-nav > li{
+	border-bottom: 1px solid transparent;
 }
 
-
-/* menu druzyny */
-
-.ball{
-  display: inline-block;
-  margin: 0 10px 0 6px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: solid 1px #2E2E2E;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  vertical-align: sub;
+.navbar-default .navbar-nav > li:hover{
+	border-bottom: 1px solid #bddffc;
+	transition: 200ms;
 }
 
-.ball:hover{
-  border: solid 1px #404040;
+.col-md-12-custom {
+	padding: 0;
 }
 
-.team{
-  background-color:#EEE;
+#banner {
+	height: 400px;
+	background: url(../img/banner.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    opacity: 0.8;
 }
 
-.teams{
-  position: relative;
-  top: 60px;
-  width: 80%;
-  margin: 0 auto;
-  cursor: pointer;
+.panel-custom {
+	width: 40%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	opacity: 0.8;
 }
 
-.teams ul {
-  list-style-type:none;
-  margin:0;
-  padding:0;
-  
-  border:1px solid #CCC;
+#technology {
+	background-color: #80bfff;
 }
 
-.teams ul li {
-  border-top:1px solid #CCC;
+.hex {
+	position: relative;
+	width: 63px;
+	height: 40px;
+	padding: 10px 0;
+	margin: 50px auto;
+	border-left: 2px solid #605c5c;
+	border-right: 2px solid #605c5c;
+	background-color: #5b71d5;
+	font-size: 12px;
+	text-align: center;
+	color: #ddd;
+	border-radius: 2px;
 }
 
-.teams ul li:first-child {
-  border-top:none;
+.hex::before, .hex::after {
+	content: "";
+	width: 47px;
+	height: 47px;
+	border-top: 3.9px solid #605c5c;
+	border-right: 3.9px solid #605c5c;
+	position: absolute;
+	z-index: 1;
+	background-color: #5b71d5;
+	left: 6px;
+	border-radius: 5px;
 }
 
-.teams ul li a:first-child {
-  padding: 0 0 0 10px;
-  width: 75%;
-  display:inline-block;
-  text-decoration:none;
-  color: #777;
-  border:1px solid transparent;
-  border-right: 1px solid #CCC;
+.hex::before {
+	transform: scaleY(0.456) rotate(-45deg);
+	top: -22px;
 }
 
-.teams ul li a:first-child:hover{
-  color: #404040;
+.hex::after {
+	transform: scaleY(-0.456) rotate(-45deg);
+	top: 15px;
 }
 
-.teams ul li a:last-child{
-  width: 25%;
-  display:inline-block;
-  padding: 11px;
-  text-align: center;
-  text-decoration: none;
-  /* color:#00A0AA; */
-  color: #777;
+.hex img {
+	position: relative;
+	z-index: 2;
+	height: 245%;
+	top: -14px;
+	margin: 0 auto;
 }
 
-.teams ul li a:last-child:hover{
-  color: #404040;
+.panel-body-custom {
+	text-align: center;
 }
 
-.teams ul li a:last-child:before{
-  font-family: 'FontAwesome';
-  content:"\f03a";
+#projects {
+	background-color: #6BABFF
 }
 
-/*rozwijane menu*/
-.tournaments{
-  border-bottom: 1px solid #CCC;
-  margin: 2px 0;
-}
-
-.gold{
-  color: #FFDD00;
-}
-
-.silver{
-  color: #CFCFCF;
-}
-
-.bronze{
-  color: #915500;
-}
-
-.stats{
-  display: inline-block;
+.projectImg {
 	width: 100%;
-	background-color: #EEE;
-	margin: 0;
-	padding: 15px 15px 5px 5px;
+	height: 220px;
+	padding: 15px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
-.statsHide{
-  display: none;
+.projectImg img {
+	width: 100%;
 }
 
-.statsShow{
-  display: inline-block;
+.projectImg img:hover {
+	transform: scale(1.5);
+	transition: 300ms;
 }
 
-.window{
-  position: relative;
-	display: inline-block;
-	width: 50%;
-	margin: 0;
-	padding: 5px 15px;
-  border: 1px solid #CCC;
-	background-color: #F7F7F7;
+#clients {
+	background-color: #809fff;
 }
 
-.triangleBorder{
-  position: absolute;
-  top: -11px;
-  left: 10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 10px 11px 10px;
-  border-color: transparent transparent #CCC transparent;
+.client {
+	width: 100%;
+	height: auto;
+	padding: 15px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
-.triangle{
-  position: absolute;
-  top: 2px;
-  left: -9px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 9px 10px 9px;
-  border-color: transparent transparent #F7F7F7 transparent;
+.client img {
+	width: 100%;
 }
 
-.tournament{
-  color: #404040;
-  display: inline-block;
-  padding: 0 0 0 10px;  
-  width: 165px;
+.client img:hover {
+	transform: scale(1.2);
+	transition: 300ms;
 }
 
-.tournamentTitle{
-  color: #404040;
-  position: relative;
-  display: inline-block;
-  width: 37px;
+#map {
+	width: 100%;
+	height: 400px;
+	background-color: #ccc;
 }
 
-.tournamentTitleFirst{
-  color: #404040;
-  position: relative;
-  display: inline-block;
+#contact {
+	background-color: #8080ff;
 }
 
-.tournamentWindow{
-  position: absolute;
-  top: 19px;
-  left: 0px;
-  width: 44px;
-  text-align: center;
-  background-color: #EEE;
-  border: 1px solid #A1A1A1;
-  border-radius: 3px;
-  padding: 2px 5px;
-  z-index: 5;
+#footer {
+	padding: 2px 0;
+	background-color: #7373f6;
 }
 
-/********************************** Team ************************************/
-
-#team{
-  position: relative;
-  top: 60px;
-  margin: 0 auto 0;
-  width: 80%;
-  border: 1px solid #CCC;
-  background-color: #EEE;
-}
-
-#team h3{
-  margin: 0;
-  text-align: center;
-}
-
-#team ul{
-  margin: 0;
-  list-style-type: none;
-}
-
-H3{
-  font-size: 1.7em;
-}
-
-#team .people{
-  width: 95%;
-  margin: 0 auto;
-  padding: 0;
-}
-
-#team .people .peopleLi:first-child{
-  border-bottom: 1px solid #CCC;
-}
-
-#coach, #player{
-  padding: 5px 0 5px 10px;
-}
-
-#coach li, #player li{
-  margin: 2px 0 0 15px;
-}
-
-#coach li:first-child, #player li:first-child{
-  margin-left: 0;
-}
-
-.name{
-  cursor: pointer;
-}
-
-.name:hover{
-  color: #404040;
-}
-
-.detail{
-  margin-left: 0 !important;
-  padding: 15px 0 10px 10px;
-  /*border-bottom: 1px solid #CCC;*/
-  width: 95%;
-}
-
-.detail:last-child{
-  border-bottom: none;
-}
-
-.spanDetails{
-  display: block;
-  margin: 2px 0;
-  padding: 0 0 0 15px;
-  border-bottom: 1px solid #CCC;
-}
-
-.spanDetailsValue{
-  width: 45%;
-  display: inline-block;
-}
-
-/********************************** /Team ***********************************/
-
-@media (max-width: 480px){
-  nav ul li a span{
-    display: none;
-  }
-  
-nav ul li .fa{
-    display: inline-block;
-    margin: 0 5px;
-  }
-
-  nav ul li a i{
-    display: inline-block;
-    margin: 0 5px;
-  }
-  
-  .teams{
-    width: 100%;
-  }
+#footer p {
+	width: 300px;
+	text-align: right;
 }
